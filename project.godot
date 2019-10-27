@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Network="*res://Networking/Network.gd"
+Saved="*res://SaveGame/Saved.gd"
 
 [rendering]
 

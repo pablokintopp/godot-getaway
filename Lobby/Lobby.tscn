@@ -110,6 +110,5 @@ margin_bottom = 196.0
 text = "Join Game"
 
 [node name="WaitingRoom" parent="." instance=ExtResource( 3 )]
-visible = false
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
