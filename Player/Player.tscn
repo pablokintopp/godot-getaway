@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.0470588, 0.027451, 0.670588, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 4 )
+size = Vector3( 2, 1.4, 4 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -1, 0.7, 2, 1, 0.7, -2, 1, 0.7, 2, -1, 0.7, -2, -1, -0.7, 2, 1, -0.7, -2, 1, -0.7, 2, -1, -0.7, -2, 1, 0.7, 2, -1, 0.7, -2, 1, 0.7, -2, -1, 0.7, 2, 1, -0.7, 2, -1, -0.7, -2, 1, -0.7, -2, -1, -0.7, 2, 1, 0.7, 2, -1, -0.7, 2, -1, 0.7, 2, 1, -0.7, 2, 1, 0.7, -2, -1, -0.7, -2, -1, 0.7, -2, 1, -0.7, -2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.403922, 0.364706, 0.364706, 1 )
+
+[sub_resource type="CylinderMesh" id=3]
+material = SubResource( 5 )
+top_radius = 0.5
+bottom_radius = 0.5
+height = 0.25
+
+[node name="Player" type="VehicleBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.314, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.314, 0 )
+shape = SubResource( 2 )
+
+[node name="WheelFrontLeft" type="VehicleWheel" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.307109, 1.46304 )
+wheel_rest_length = 0.3
+
+[node name="MeshInstance" type="MeshInstance" parent="WheelFrontLeft"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="WheelRearLeft" type="VehicleWheel" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.307109, -1.22209 )
+wheel_rest_length = 0.3
+
+[node name="MeshInstance" type="MeshInstance" parent="WheelRearLeft"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="WheelRearRight" type="VehicleWheel" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.981961, 0.307109, -1.22209 )
+wheel_rest_length = 0.3
+
+[node name="MeshInstance" type="MeshInstance" parent="WheelRearRight"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="WheelFrontRight" type="VehicleWheel" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972979, 0.307109, 1.46304 )
+wheel_rest_length = 0.3
+
+[node name="MeshInstance" type="MeshInstance" parent="WheelFrontRight"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
