@@ -5,6 +5,7 @@ const STEER_SPEED = 1
 
 const MAX_ENGINE_FORCE = 175
 const MAX_BRAKE_FORCE = 10
+const MAX_SPEED = 30
 
 var steer_target = 0.0 # where do I want the wheels to go?
 var steer_angle = 0.0 # where are the wheels now
@@ -42,10 +43,11 @@ func apply_throttle():
 	var forward = Input.get_action_strength("forward")
 	var back = Input.get_action_strength("back")
 	
-	if back:
-		throttle_val = -back
-	elif forward:
-		throttle_val = forward
+	if linear_velocity.length() < MAX_SPEED:	
+		if back:
+			throttle_val = -back
+		elif forward:
+			throttle_val = forward
 	return throttle_val * MAX_ENGINE_FORCE
 	
 func apply_brackes():

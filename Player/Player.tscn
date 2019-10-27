@@ -26,20 +26,26 @@ mass = 122.449
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.314, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18267, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.314, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18267, 0 )
 shape = SubResource( 2 )
 
 [node name="WheelFrontLeft" type="VehicleWheel" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.307109, 1.46304 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.485587, 1.46304 )
 use_as_traction = true
 use_as_steering = true
-wheel_rest_length = 0.3
+wheel_rest_length = 0.4
+wheel_friction_slip = 10.0
+suspension_travel = 0.4
+suspension_stiffness = 25.0
+suspension_max_force = 750.0
+damping_compression = 1.0
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFrontLeft"]
 transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
@@ -48,8 +54,14 @@ material/0 = null
 
 [node name="WheelRearLeft" type="VehicleWheel" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.307109, -1.22209 )
-wheel_rest_length = 0.3
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00744, 0.485587, -1.22209 )
+wheel_rest_length = 0.4
+wheel_friction_slip = 5.0
+suspension_travel = 0.4
+suspension_stiffness = 25.0
+suspension_max_force = 750.0
+damping_compression = 1.0
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRearLeft"]
 transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
@@ -58,8 +70,14 @@ material/0 = null
 
 [node name="WheelRearRight" type="VehicleWheel" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.981961, 0.307109, -1.22209 )
-wheel_rest_length = 0.3
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.981961, 0.485587, -1.22209 )
+wheel_rest_length = 0.4
+wheel_friction_slip = 5.0
+suspension_travel = 0.4
+suspension_stiffness = 25.0
+suspension_max_force = 750.0
+damping_compression = 1.0
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRearRight"]
 transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
@@ -68,10 +86,16 @@ material/0 = null
 
 [node name="WheelFrontRight" type="VehicleWheel" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972979, 0.307109, 1.46304 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.972979, 0.485587, 1.46304 )
 use_as_traction = true
 use_as_steering = true
-wheel_rest_length = 0.3
+wheel_rest_length = 0.4
+wheel_friction_slip = 10.0
+suspension_travel = 0.4
+suspension_stiffness = 25.0
+suspension_max_force = 750.0
+damping_compression = 1.0
+damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFrontRight"]
 transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0, 0, 0 )
