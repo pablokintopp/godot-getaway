@@ -109,6 +109,9 @@ margin_right = 461.0
 margin_bottom = 196.0
 text = "Join Game"
 
-[node name="WaitingRoom" parent="." instance=ExtResource( 3 )]
+[node name="WaitingRoom" parent="." groups=[
+"WaitingRoom",
+] instance=ExtResource( 3 )]
+[connection signal="text_changed" from="VBoxContainer/CenterContainer/GridContainer/NameTextbox" to="." method="_on_NameTextbox_text_changed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/JoinButton" to="." method="_on_JoinButton_pressed"]

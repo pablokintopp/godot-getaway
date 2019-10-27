@@ -8,7 +8,7 @@ func _ready():
 
 func get_data():
 	var file = File.new()
-	if not file.file_existis(SAVEGAME):
+	if not file.file_exists(SAVEGAME):
 		save_data = {"Player_name": "Unnamed"}
 		save_game()
 	file.open(SAVEGAME, File.READ)
