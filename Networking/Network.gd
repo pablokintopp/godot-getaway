@@ -56,5 +56,8 @@ func _on_player_connected(id):
 sync func update_waiting_room():
 	get_tree().call_group("WaitingRoom", "refresh_players", players)	
 	
+func start_game():	
+	rpc("load_world")
 	
-	
+sync func load_world():
+	get_tree().change_scene("res://World/World.tscn")
