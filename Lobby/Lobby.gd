@@ -1,34 +1,33 @@
 extends Control
 
-onready var NameTextbox = $VBoxContainer/CenterContainer/GridContainer/NameTextbox
-onready var PortTextbox = $VBoxContainer/CenterContainer/GridContainer/PortTextBox
-onready var IPTextbox = $VBoxContainer/CenterContainer/GridContainer/IPTextBox
+onready var NameTextBox = $VBoxContainer/CenterContainer/GridContainer/NameTextbox
+onready var PortTextBox = $VBoxContainer/CenterContainer/GridContainer/PortTextBox
+onready var IPTextBox = $VBoxContainer/CenterContainer/GridContainer/IPTextBox
 
 func _ready():
-	NameTextbox.text = Saved.save_data["Player_name"]
-	IPTextbox.text = Network.DEFAULT_IP
-	PortTextbox.text = str(Network.DEFAULT_PORT)
-
+	NameTextBox.text = Saved.save_data["Player_name"]	
+	IPTextBox.text = Network.DEFAULT_IP
+	PortTextBox.text = str(Network.DEFAULT_PORT)
+	
 func _on_HostButton_pressed():
-	Network.selected_port = int(PortTextbox.text)
+	Network.selected_IP = IPTextBox.text
+	Network.selected_port = int(PortTextBox.text)
 	Network.create_server()
-	get_tree().call_group("HostOnly","show")
+	get_tree().call_group("HostOnly", "show")
 	create_waiting_room()
 
-
 func _on_JoinButton_pressed():
-	Network.selected_port = int(PortTextbox.text)
-	Network.selected_ip = IPTextbox.text
+	Network.selected_IP = IPTextBox.text
+	Network.selected_port = int(PortTextBox.text)
 	Network.connect_to_server()
 	create_waiting_room()
 
-
-func _on_NameTextbox_text_changed(new_text):
-	Saved.save_data["Player_name"] = NameTextbox.text
+func _on_NameTextBox_text_changed(new_text):
+	Saved.save_data["Player_name"] = NameTextBox.text
 	Saved.save_game()
-	
+
 func create_waiting_room():
-	$WaitingRoom.popup_centered()	
+	$WaitingRoom.popup_centered()
 	$WaitingRoom.refresh_players(Network.players)
 
 
