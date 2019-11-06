@@ -7,7 +7,7 @@ const W = 8
 
 var width = 20
 var height = 20
-var spacing = 1
+var spacing = 3
 
 var cell_walls = {Vector3(0, 0, -spacing): N, Vector3(spacing, 0, 0): E, 
 		Vector3(0, 0, spacing): S, Vector3(-spacing, 0, 0): W }
@@ -56,10 +56,28 @@ func make_maze():
 			
 			set_cell_item(current.x, 0, current.z, current_walls, 0)
 			set_cell_item(next.x, 0, next.z, next_walls, 0)
-			
+			fill_gaps(current, dir)
 			current = next
 			unvisited.erase(current)
 		elif stack:
 			current = stack.pop_back()
 	
+func fill_gaps(current, dir):
+	var tile_type 
+	for i in range(1, spacing):
+		if dir.x > 0:
+			tile_type = 5
+			current.x += 1
+		elif dir.x < 0:
+			tile_type = 5
+			current.x -= 1
+		elif dir.z > 0:
+			tile_type = 10
+			current.z += 1
+		elif dir.z < 0:
+			tile_type = 10
+			current.z -= 1
+		set_cell_item(current.x, 0, current.z, tile_type, 0)
+		
+		
 	

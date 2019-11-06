@@ -5,6 +5,7 @@
 [ext_resource path="res://Lobby/WaitingRoom.tscn" type="PackedScene" id=3]
 
 [node name="Lobby" type="Control"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0

@@ -39,7 +39,7 @@ damping_compression = 1.0
 damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFrontLeft"]
-transform = Transform( 0.996195, -0.0871558, 0, 0.0871558, 0.996195, 0, 0, 0, 1, 0, -9.31323e-009, 0 )
+transform = Transform( 0.996195, -0.0871558, 0, 0.0871558, 0.996195, 0, 0, 0, 1, 0, -9.31323e-09, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -47,7 +47,7 @@ material/2 = null
 
 [node name="WheelFrontRight" type="VehicleWheel" parent="."]
 editor/display_folded = true
-transform = Transform( 1, -1.74846e-007, 0, 1.74846e-007, 1, 0, 0, 0, 1, -0.75, 0.562096, 1.44417 )
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -0.75, 0.562096, 1.44417 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.4
@@ -60,7 +60,7 @@ damping_compression = 1.0
 damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFrontRight"]
-transform = Transform( -0.996195, 0.0871562, -8.74228e-008, 0.0871562, 0.996195, 1.52855e-014, 8.70901e-008, -7.61942e-009, -1, 0, 0, -1.19209e-007 )
+transform = Transform( -0.996195, 0.0871562, -8.74228e-08, 0.0871562, 0.996195, 1.52855e-14, 8.70901e-08, -7.61942e-09, -1, 0, 0, -1.19209e-07 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
@@ -79,14 +79,14 @@ damping_compression = 1.0
 damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRearLeft"]
-transform = Transform( 1, -1.06581e-014, 0, 1.06581e-014, 1, 0, 0, 0, 1, 0, -9.31323e-009, 0 )
+transform = Transform( 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, -9.31323e-09, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="WheelRearRight" type="VehicleWheel" parent="."]
-transform = Transform( 1, -1.74846e-007, 0, 1.74846e-007, 1, 0, 0, 0, 1, -0.75, 0.562096, -1.18938 )
+transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -0.75, 0.562096, -1.18938 )
 wheel_radius = 0.4
 wheel_rest_length = 0.2
 wheel_friction_slip = 5.0
@@ -97,13 +97,13 @@ damping_compression = 1.0
 damping_relaxation = 4.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRearRight"]
-transform = Transform( -1, 3.49691e-007, -8.74228e-008, 3.49691e-007, 1, 1.52855e-014, 8.74228e-008, -1.52855e-014, -1, 0, 0, 1.19209e-007 )
+transform = Transform( -1, 3.49691e-07, -8.74228e-08, 3.49691e-07, 1, 1.52855e-14, 8.74228e-08, -1.52855e-14, -1, 0, 0, 1.19209e-07 )
 mesh = ExtResource( 3 )
 material/0 = null
 material/1 = null
 material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 2.99003e-008, -8.21506e-008, -9.16427e-009, 0.898663, 0.438641, 8.69411e-008, 0.438641, -0.898663, 0.0908523, 2.92038, -4.1765 )
+transform = Transform( -1, 2.99003e-08, -8.21505e-08, -8.10491e-08, 0.0351413, 0.999382, 3.27687e-08, 0.999382, -0.0351413, 0.0908523, 49.8454, -4.83339 )
 fov = 97.965
 far = 600.0
