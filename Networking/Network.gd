@@ -10,6 +10,7 @@ var selected_IP
 var local_player_id = 0
 sync var players = {}
 sync var player_data = {}
+var ready_players = 0
 
 signal player_disconnected
 signal server_disconnected

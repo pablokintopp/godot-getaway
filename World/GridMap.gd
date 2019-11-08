@@ -19,6 +19,7 @@ func _ready():
 	if Network.local_player_id == 1:
 		randomize()
 		make_map()
+		rpc("send_ready")
 
 func make_map():
 	make_blank_map()
@@ -123,3 +124,17 @@ func erase_walls():
 	
 sync func place_cell(x, z, cell, cel_rotation):
 	set_cell_item(x, 0, z, cell, cel_rotation)
+	
+sync func send_ready():
+	if Network.local_player_id == 1:
+		player_ready()
+	else:
+		rpc_id(1, "player_ready")
+
+remote func player_ready():
+	Network.ready_players += 1
+	if Network.ready_players == Network.players.size():
+		rpc("send_go")
+
+sync func send_go():
+	get_tree().call_group("gamestate", "unpause")
