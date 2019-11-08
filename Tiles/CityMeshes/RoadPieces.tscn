@@ -663,17 +663,17 @@ material/0 = null
 [node name="shape" type="CollisionShape" parent="15_blank /col"]
 shape = SubResource( 32 )
 
-[node name="Skyscraper" type="MeshInstance" parent="."]
+[node name="16_Skyscraper" type="MeshInstance" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.91, 0, -33.4501 )
 mesh = SubResource( 33 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Skyscraper"]
+[node name="StaticBody" type="StaticBody" parent="16_Skyscraper"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Skyscraper/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="16_Skyscraper/StaticBody"]
 shape = SubResource( 34 )
 
-[node name="3 Buildings " parent="." instance=ExtResource( 4 )]
+[node name="17_Buildings " parent="." instance=ExtResource( 4 )]
 
-[node name="4 Buildings " parent="." instance=ExtResource( 5 )]
+[node name="18_Buildings " parent="." instance=ExtResource( 5 )]
