@@ -27,8 +27,14 @@ func make_map():
 func make_blank_map():
 	for x in width:
 		for z in height:
-			set_cell_item(x, 0, z, 15)
+			var building = pick_building()
+			set_cell_item(x, 0, z, building)
 			
+func pick_building():
+	var possible_buildings = [16, 17, 18]
+	var building = possible_buildings[randi() % possible_buildings.size() - 1]
+	return building
+	
 func check_neighbours(cell, unvisited):
 	var list = []
 	for n in cell_walls.keys():
@@ -49,13 +55,17 @@ func make_maze():
 	while unvisited:
 		var neighbours = check_neighbours(current, unvisited)
 		if neighbours.size() > 0:
-			stack.append(current)
+			var next
+			if current == Vector3(0,0,0):
+				next =  Vector3(0, 0, spacing) 
+			else: 
+				next = neighbours[randi() % neighbours.size()]
 			
-			var next = neighbours[randi() % neighbours.size()]
+			stack.append(current)
 			var dir  = next - current
 			
-			var current_walls = get_cell_item(current.x, 0, current.z) - cell_walls[dir]
-			var next_walls = get_cell_item(next.x, 0, next.z) - cell_walls[-dir]
+			var current_walls =  min(get_cell_item(current.x, 0, current.z) - cell_walls[dir], 15)
+			var next_walls = min(get_cell_item(next.x, 0, next.z) - cell_walls[-dir], 15)
 			
 			set_cell_item(current.x, 0, current.z, current_walls, 0)
 			set_cell_item(next.x, 0, next.z, next_walls, 0)
@@ -93,8 +103,9 @@ func erase_walls():
 		
 		if current_cell & cell_walls[neighbour]:
 			var walls = current_cell - cell_walls[neighbour]
+			walls = clamp(walls, 0, 15)
 			var neighbout_walls = get_cell_item(cell.x + neighbour.x, 0, cell.z + neighbour.z) - cell_walls[-neighbour]
-			
+			neighbout_walls = clamp(neighbout_walls, 0, 15)
 			set_cell_item(cell.x, 0, cell.z, 0)
 			set_cell_item( (cell + neighbour).x, 0, (cell + neighbour).z, neighbout_walls, 0)
 			fill_gaps(cell, neighbour)
