@@ -27,8 +27,11 @@ func make_map():
 func make_blank_map():
 	for x in width:
 		for z in height:
+			var possible_rotations = [0, 10 , 16, 22]
+			var build_rotation = possible_rotations[randi() % 4]
+			
 			var building = pick_building()
-			set_cell_item(x, 0, z, building)
+			set_cell_item(x, 0, z, building, build_rotation)
 			
 func pick_building():
 	var possible_buildings = [16, 17, 18]
@@ -64,8 +67,8 @@ func make_maze():
 			stack.append(current)
 			var dir  = next - current
 			
-			var current_walls =  min(get_cell_item(current.x, 0, current.z) - cell_walls[dir], 15)
-			var next_walls = min(get_cell_item(next.x, 0, next.z) - cell_walls[-dir], 15)
+			var current_walls =  min(get_cell_item(current.x, 0, current.z) , 15) - cell_walls[dir]
+			var next_walls = min(get_cell_item(next.x, 0, next.z) , 15) - cell_walls[-dir]
 			
 			set_cell_item(current.x, 0, current.z, current_walls, 0)
 			set_cell_item(next.x, 0, next.z, next_walls, 0)
