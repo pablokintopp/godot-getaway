@@ -25,7 +25,6 @@ material/2 = null
 material/3 = null
 
 [node name="WheelFrontLeft" type="VehicleWheel" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.562096, 1.44417 )
 use_as_traction = true
 use_as_steering = true

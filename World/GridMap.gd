@@ -20,6 +20,7 @@ func _ready():
 		randomize()
 		make_map_border()
 		make_map()
+		record_tile_positions()
 		rpc("send_ready")
 		
 func make_map_border():
@@ -129,6 +130,20 @@ func erase_walls():
 sync func place_cell(x, z, cell, cel_rotation):
 	set_cell_item(x, 0, z, cell, cel_rotation)
 	
+func record_tile_positions():
+	var tiles = []
+	for x in range(0, width):
+		for z in range(0, height):
+			var current_cell = Vector3(x, 0, z)
+			var current_tile_type = get_cell_item(current_cell.x, 0, current_cell.z)
+			if current_tile_type < 15:
+				tiles.append(current_cell)
+				
+	var map_size = Vector2(width, height)
+	$ObjectSpawner.generate_props(tiles, map_size)
+
+
+
 sync func send_ready():
 	if Network.local_player_id == 1:
 		player_ready()
