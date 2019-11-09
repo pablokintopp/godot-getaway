@@ -18,8 +18,12 @@ func _ready():
 	clear()
 	if Network.local_player_id == 1:
 		randomize()
+		make_map_border()
 		make_map()
 		rpc("send_ready")
+		
+func make_map_border():
+	$Border.resize_border(cell_size.x, width) # Assume square maps
 
 func make_map():
 	make_blank_map()

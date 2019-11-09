@@ -5,7 +5,6 @@
 [ext_resource path="res://Lobby/WaitingRoom.tscn" type="PackedScene" id=3]
 
 [node name="Lobby" type="Control"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -38,6 +37,7 @@ text = "Lobby"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_top = 38.0
 margin_right = 1023.0
 margin_bottom = 234.0
@@ -113,6 +113,7 @@ text = "Join Game"
 [node name="WaitingRoom" parent="." groups=[
 "WaitingRoom",
 ] instance=ExtResource( 3 )]
+editor/display_folded = true
 
 [node name="Label" parent="WaitingRoom/VBoxContainer" index="0"]
 margin_bottom = 34.0

@@ -23,3 +23,4 @@ func unpause():
 	get_tree().paused = false
 	spawn_local_player()
 	rpc("spawn_remote_player", Network.local_player_id)
+	
