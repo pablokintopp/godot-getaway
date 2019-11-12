@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pipe4.ogg-ff4b52375de45cca24ab9c5471dbeb17.oggstr"
+
+[deps]
+
+source_file="res://SFX/Pipes/Pipe4.ogg"
+dest_files=[ "res://.import/Pipe4.ogg-ff4b52375de45cca24ab9c5471dbeb17.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

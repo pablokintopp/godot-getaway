@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dieselengine.ogg-2f6207902e9b675866b58ed93a28bc52.oggstr"
+
+[deps]
+
+source_file="res://SFX/dieselengine.ogg"
+dest_files=[ "res://.import/dieselengine.ogg-2f6207902e9b675866b58ed93a28bc52.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

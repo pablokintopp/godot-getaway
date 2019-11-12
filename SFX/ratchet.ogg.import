@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ratchet.ogg-db284fbc757ec2009e10cf396429df4c.oggstr"
+
+[deps]
+
+source_file="res://SFX/ratchet.ogg"
+dest_files=[ "res://.import/ratchet.ogg-db284fbc757ec2009e10cf396429df4c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

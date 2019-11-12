@@ -104,5 +104,6 @@ material/2 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 3, -4 )
+doppler_tracking = 2
 fov = 97.965
 far = 600.0
