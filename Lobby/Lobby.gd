@@ -22,9 +22,6 @@ func _on_JoinButton_pressed():
 	Network.connect_to_server()
 	create_waiting_room()
 
-func _on_NameTextBox_text_changed(new_text):
-	Saved.save_data["Player_name"] = NameTextBox.text
-	Saved.save_game()
 
 func create_waiting_room():
 	$WaitingRoom.popup_centered()
@@ -33,3 +30,7 @@ func create_waiting_room():
 
 func _on_ReadyButton_pressed():
 	Network.start_game()
+
+func _on_NameTextbox_text_changed(new_text):
+	Saved.save_data["Player_name"] = NameTextBox.text
+	Saved.save_game()

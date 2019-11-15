@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Props/Hydrant/FireHydrant.tscn" type="PackedScene" id=1]
+
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 0.25
+gravity = Vector3( 0, 9.8, 0 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_do_not_receive_shadows = true
+albedo_color = Color( 0.192157, 0.658824, 0.941176, 1 )
+emission_enabled = true
+emission = Color( 0.133333, 0.341176, 0.443137, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+size = Vector3( 0.25, 0.25, 0.25 )
+
+[sub_resource type="CylinderShape" id=4]
+height = 4.0
+
+[node name="Hydrant" type="Spatial"]
+
+[node name="FireHydrant " parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
+emitting = false
+amount = 256
+preprocess = 5.0
+speed_scale = 2.0
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06741, 0 )
+shape = SubResource( 4 )
+
+[node name="CarPusher" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3.03161, 9 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="CarPusher"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06741, 0 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CarPusher"]

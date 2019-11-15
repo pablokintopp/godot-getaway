@@ -25,6 +25,7 @@ material/2 = null
 material/3 = null
 
 [node name="WheelFrontLeft" type="VehicleWheel" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.562096, 1.44417 )
 use_as_traction = true
 use_as_steering = true
@@ -70,7 +71,7 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.562096, -1.18938 )
 wheel_radius = 0.4
 wheel_rest_length = 0.2
-wheel_friction_slip = 5.0
+wheel_friction_slip = 8.5
 suspension_travel = 0.4
 suspension_stiffness = 25.0
 suspension_max_force = 500.0
@@ -85,10 +86,11 @@ material/1 = null
 material/2 = null
 
 [node name="WheelRearRight" type="VehicleWheel" parent="."]
+editor/display_folded = true
 transform = Transform( 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -0.75, 0.562096, -1.18938 )
 wheel_radius = 0.4
 wheel_rest_length = 0.2
-wheel_friction_slip = 5.0
+wheel_friction_slip = 8.5
 suspension_travel = 0.4
 suspension_stiffness = 25.0
 suspension_max_force = 500.0
