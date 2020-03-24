@@ -6,6 +6,7 @@ var map_size = Vector2()
 var number_of_parked_cars = 100
 var number_of_billboards = 75
 var number_of_traffic_cones = 40
+var number_of_hydrants = 50
 
 func generate_props(tile_list, size):
 	tiles = tile_list
@@ -13,6 +14,7 @@ func generate_props(tile_list, size):
 	place_cars()
 	place_billboards()
 	place_traffic_cones()
+	place_hydrants()
 
 
 func random_tile(tile_count):
@@ -81,6 +83,26 @@ sync func spawn_cones(tile, traffic_cones_rotation):
 	traffic_cones.translation  = Vector3((tile.x * 20) + 10, tile.y, (tile.z * 20) + 10)
 	traffic_cones.rotation_degrees.y = traffic_cones_rotation
 	add_child(traffic_cones, true)
+	
+	
+func place_hydrants():
+	var tile_list = random_tile(number_of_hydrants)
+	for i in range(number_of_hydrants):
+		var tile = tile_list[0]
+		var tile_type = get_node("..").get_cell_item(tile.x, 0, tile.z)
+		var allowed_rotations = $ObjectRotLookup.lookup_rotation(tile_type)
+		if not allowed_rotations == null:
+			var tile_rotation =  allowed_rotations[randi() % allowed_rotations.size() - 1] * -1
+			tile.y = tile.y + 0.5 # Adjust for the height of the cars if needed
+			rpc("spawn_hydrants", tile, tile_rotation)
+		tile_list.pop_front()
+	
+
+sync func spawn_hydrants(tile, hydrant_rotation):
+	var hydrant = preload("res://Props/Hydrant/Hydrant.tscn").instance()
+	hydrant.translation  = Vector3((tile.x * 20) + 10, tile.y, (tile.z * 20) + 10)
+	hydrant.rotation_degrees.y = hydrant_rotation
+	add_child(hydrant, true)
 
 
 
