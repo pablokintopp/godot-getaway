@@ -9,6 +9,7 @@ var number_of_traffic_cones = 40
 var number_of_hydrants = 50
 var number_of_streetlights = 50
 var number_of_dumpster = 25
+var number_of_scaffolding = 25
 
 func generate_props(tile_list, size):
 	tiles = tile_list
@@ -19,6 +20,7 @@ func generate_props(tile_list, size):
 	place_objects(number_of_hydrants, preload("res://Props/Hydrant/Hydrant.tscn"))
 	place_objects(number_of_streetlights, preload("res://Props/StreetLight/StreetLight.tscn"))
 	place_objects(number_of_dumpster, preload("res://Props/Dumpster/Dumpster.tscn"))
+	place_objects(number_of_scaffolding, preload("res://Props/Scaffolding/Scaffolding.tscn"))
 
 
 func random_tile(tile_count):

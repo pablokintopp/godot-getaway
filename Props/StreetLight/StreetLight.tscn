@@ -22,7 +22,7 @@ data = PoolVector3Array( 0, 0.808, -0.2, 0, 0.7807, -0.2124, 0.1502, 0.7807, -0.
 [node name="StreetLight" type="Spatial"]
 
 [node name="StreetLamp " type="MeshInstance" parent="."]
-transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, 9, 0, 9 )
+transform = Transform( -2, 0, -7.78829e-07, 0, 2, 0, 7.78829e-07, 0, -2, 9.5, 0, 9.5 )
 cast_shadow = 0
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Props/MetalSteel.material" type="Material" id=1]
+[ext_resource path="res://Props/Scaffolding/ScaffoldPole.gd" type="Script" id=2]
+
+[sub_resource type="CylinderMesh" id=1]
+material = ExtResource( 1 )
+top_radius = 0.125
+bottom_radius = 0.125
+height = 18.0
+radial_segments = 8
+rings = 2
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.13
+height = 18.0
+
+[node name="ScaffoldPole" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0 )
+contacts_reported = 1
+contact_monitor = true
+sleeping = true
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unit_size = 10.0
+max_distance = 150.0
+bus = "SoundEffects"
+doppler_tracking = 2
+[connection signal="body_shape_entered" from="." to="." method="_on_ScaffoldPole_body_shape_entered"]

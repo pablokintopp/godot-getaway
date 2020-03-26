@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Props/Scaffolding/ScaffoldPole.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Props/Scaffolding/ScaffoldBoard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Props/Scaffolding/ScaffoldSupport.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Props/Scaffolding/ScaffoldBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Props/Scaffolding/Scaffolding.gd" type="Script" id=5]
+
+[node name="Scaffolding" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="ScaffoldPole" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9, -9 )
+
+[node name="ScaffoldPole2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -9 )
+
+[node name="ScaffoldPole3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9, -9 )
+
+[node name="ScaffoldPole6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9, -11 )
+
+[node name="ScaffoldPole5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -11 )
+
+[node name="ScaffoldPole4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9, -11 )
+
+[node name="ScaffoldBoard" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 5, -10 )
+
+[node name="ScaffoldBoard2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 8, -10 )
+
+[node name="ScaffoldBoard3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 11, -10 )
+
+[node name="ScaffoldBoard4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 14, -10 )
+
+[node name="ScaffoldBoard5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 17, -10 )
+
+[node name="ScaffoldSupport" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, -10 )
+
+[node name="ScaffoldSupport2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -10 )
+
+[node name="ScaffoldSupport3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -10 )
+
+[node name="ScaffoldSupport6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8, -10 )
+
+[node name="ScaffoldSupport5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -10 )
+
+[node name="ScaffoldSupport4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 8, -10 )
+
+[node name="ScaffoldSupport9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11, -10 )
+
+[node name="ScaffoldSupport8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -10 )
+
+[node name="ScaffoldSupport7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11, -10 )
+
+[node name="ScaffoldSupport12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 14, -10 )
+
+[node name="ScaffoldSupport11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -10 )
+
+[node name="ScaffoldSupport10" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 14, -10 )
+
+[node name="ScaffoldSupport15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 17, -10 )
+
+[node name="ScaffoldSupport14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, -10 )
+
+[node name="ScaffoldSupport13" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 17, -10 )
+
+[node name="ScaffoldBar" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 7, -8.77769 )
+
+[node name="ScaffoldBar2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 10, -8.77769 )
+
+[node name="ScaffoldBar3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 13, -8.77769 )
+
+[node name="ScaffoldBar4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 16, -8.77769 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="sleeping_state_changed" from="ScaffoldPole" to="." method="_on_ScaffoldPole_sleeping_state_changed"]

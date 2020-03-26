@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Props/Wood.material" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 2, 0.125, 12 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 0.063, 6 )
+
+[node name="ScaffoldBoard" type="RigidBody"]
+sleeping = true
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )

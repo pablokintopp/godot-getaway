@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Pipe3.ogg-71bb7693f437b285b66e105d1be260af.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
