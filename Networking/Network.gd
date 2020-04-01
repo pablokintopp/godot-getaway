@@ -15,6 +15,8 @@ var ready_players = 0
 signal player_disconnected
 signal server_disconnected
 
+var is_cop = false
+
 func _ready():
 	get_tree().connect("network_peer_disconnected", self, "_on_player_disconnected")
 	get_tree().connect("network_peer_connected", self, "_on_player_connected")
@@ -37,15 +39,16 @@ func add_to_player_list():
 	local_player_id = get_tree().get_network_unique_id()
 	player_data = Saved.save_data
 	players[local_player_id] = player_data
-	
+	players[local_player_id]["is_cop"] = is_cop
 	
 func _connected_to_server():
 	add_to_player_list()
-	rpc("_send_player_info", local_player_id, player_data)
+	rpc("_send_player_info", local_player_id, player_data, is_cop)
 	
 	
-remote func _send_player_info(id, player_info): 
+remote func _send_player_info(id, player_info, is_cop_param): 
 	players[id ] = player_info
+	players[id]["is_cop"] = is_cop_param
 	if local_player_id == 1:
 		rset("players", players)
 		rpc("update_waiting_room")

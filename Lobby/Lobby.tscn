@@ -42,12 +42,12 @@ align = 1
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 38.0
 margin_right = 1023.0
-margin_bottom = 234.0
+margin_bottom = 284.0
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
 margin_left = 281.0
 margin_right = 742.0
-margin_bottom = 196.0
+margin_bottom = 246.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 16
 columns = 2
@@ -112,6 +112,21 @@ margin_right = 461.0
 margin_bottom = 196.0
 text = "Join Game"
 
+[node name="TeamLabel" type="Label" parent="VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 208.0
+margin_right = 125.0
+margin_bottom = 242.0
+text = "Team"
+align = 2
+
+[node name="TeamCheckButton" type="CheckButton" parent="VBoxContainer/CenterContainer/GridContainer"]
+margin_left = 141.0
+margin_top = 204.0
+margin_right = 461.0
+margin_bottom = 246.0
+text = "Cop Mode"
+align = 2
+
 [node name="WaitingRoom" parent="." groups=[
 "WaitingRoom",
 ] instance=ExtResource( 3 )]
@@ -131,6 +146,7 @@ items = [ "Player 1", null, false, "Player 2", null, false ]
 [connection signal="text_changed" from="VBoxContainer/CenterContainer/GridContainer/NameTextbox" to="." method="_on_NameTextbox_text_changed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="toggled" from="VBoxContainer/CenterContainer/GridContainer/TeamCheckButton" to="." method="_on_TeamCheckButton_toggled"]
 [connection signal="pressed" from="WaitingRoom/VBoxContainer/ReadyButton" to="." method="_on_ReadyButton_pressed"]
 
 [editable path="WaitingRoom"]
