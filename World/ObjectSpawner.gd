@@ -23,7 +23,7 @@ func generate_props(tile_list, size):
 	place_objects(number_of_streetlights, preload("res://Props/StreetLight/StreetLight.tscn"))
 	place_objects(number_of_dumpster, preload("res://Props/Dumpster/Dumpster.tscn"))
 	place_objects(number_of_scaffolding, preload("res://Props/Scaffolding/Scaffolding.tscn"))
-
+	rpc("spawn_object", preload("res://Beacon/Goal.tscn").instance() , tile_list[0], 0)
 
 func random_tile(tile_count):
 	var tile_list = tiles

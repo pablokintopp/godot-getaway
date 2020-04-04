@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Beacon/Beacon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Beacon/Goal.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.0156863, 0.34902, 0.980392, 0.498039 )
+
+[node name="Goal" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CSGCylinder" parent="." index="0"]
+material = SubResource( 1 )

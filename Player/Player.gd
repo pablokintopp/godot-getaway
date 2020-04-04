@@ -146,6 +146,15 @@ remote func display_money():
 	$GUI/ColorRect/VBoxContainer/MoneyLabel/AnimationPlayer.play("MoneyPulse")
 	$GUI/ColorRect/VBoxContainer/MoneyLabel.text = "$" + str(money) 
 	
-	
+
+func money_delivered():
+	print("delivering" + str(money))
+	money = 0;
+	manage_money()
+
+
+
+
+
 
 
