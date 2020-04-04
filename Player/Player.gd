@@ -10,8 +10,11 @@ const MAX_SPEED = 30
 var steer_target = 0.0  # where the wheels are supposed to be
 var steer_angle = 0.0 # where are the wheels now
 
+var money = 0
+var money_per_beacon = 1000
+
 sync var players = {}
-var player_data = {"steer":0, "engine":0, "brakes":0, "position":null, "speed":0}
+var player_data = {"steer":0, "engine":0, "brakes":0, "position":null, "speed":0, "money":0}
 
 func _ready():
 	join_team()
@@ -118,3 +121,28 @@ func display_location():
 	var x = stepify(translation.x, 1);
 	var z = stepify(translation.z, 1);
 	$GUI/ColorRect/VBoxContainer/LocationLabel.text = str(x) + ", " + str(z)
+	
+
+func beacon_emptied():
+	money += money_per_beacon
+	manage_money()
+
+func manage_money():
+	if Network.local_player_id == 1:
+		update_money(name, money)
+	else:
+		rpc_id(1, "update_money", name, money)
+
+
+sync func  update_money(id, new_money):
+	players[id].money = new_money
+	display_money()
+
+func display_money():
+	money = players[name].money
+	$GUI/ColorRect/VBoxContainer/MoneyLabel/AnimationPlayer.play("MoneyPulse")
+	$GUI/ColorRect/VBoxContainer/MoneyLabel.text = "$" + str(money) 
+	
+	
+
+
