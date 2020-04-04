@@ -134,11 +134,14 @@ func manage_money():
 		rpc_id(1, "update_money", name, money)
 
 
-sync func  update_money(id, new_money):
+remote func  update_money(id, new_money):
 	players[id].money = new_money
-	display_money()
+	if name == "1":
+		display_money()
+	else:
+		rpc_id(int(id), "display_money")
 
-func display_money():
+remote func display_money():
 	money = players[name].money
 	$GUI/ColorRect/VBoxContainer/MoneyLabel/AnimationPlayer.play("MoneyPulse")
 	$GUI/ColorRect/VBoxContainer/MoneyLabel.text = "$" + str(money) 
