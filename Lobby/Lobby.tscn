@@ -5,43 +5,44 @@
 [ext_resource path="res://Lobby/WaitingRoom.tscn" type="PackedScene" id=3]
 
 [node name="Lobby" type="Control"]
-anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1024.0
-margin_top = -600.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1024.0
-margin_top = -600.0
 color = Color( 0.00390625, 0.00390625, 0.00390625, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2.10529
-margin_top = 16.0
-margin_right = 2.10522
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -292.0
+margin_right = 512.0
+margin_bottom = 292.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 1023.0
+margin_right = 1024.0
 margin_bottom = 34.0
 text = "Lobby"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 38.0
-margin_right = 1023.0
+margin_right = 1024.0
 margin_bottom = 284.0
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
