@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Beacon/Beacon.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+albedo_color = Color( 0.607843, 0.607843, 0, 0.705882 )
+
+[sub_resource type="CylinderShape" id=2]
+radius = 2.5
+height = 5.0
+
+[node name="Beacon" type="Area"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
+radius = 2.5
+height = 60.0
+sides = 64
+material = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+[connection signal="body_entered" from="." to="." method="_on_Beacon_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Beacon_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

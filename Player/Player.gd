@@ -29,6 +29,7 @@ func is_local_Player():
 func join_team():
 	if Network.players[int(name)]["is_cop"]:
 		add_to_group("cops")
+		collision_layer = 4
 		$RobberMesh.queue_free()
 	else:
 		$CopMesh.queue_free()

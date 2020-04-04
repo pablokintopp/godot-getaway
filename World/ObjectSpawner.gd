@@ -10,10 +10,12 @@ var number_of_hydrants = 50
 var number_of_streetlights = 50
 var number_of_dumpster = 25
 var number_of_scaffolding = 25
+var number_of_beacon = 20
 
 func generate_props(tile_list, size):
 	tiles = tile_list
 	map_size = size
+	place_objects(number_of_beacon, preload("res://Beacon/Beacon.tscn"))
 	place_objects(number_of_parked_cars, preload("res://Props/ParkedCars.tscn"))
 	place_objects(number_of_billboards, preload("res://Props/Billboards/Billboard.tscn"))
 	place_objects(number_of_traffic_cones, preload("res://Props/TrafficCones/TrafficCones.tscn"))
