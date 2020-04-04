@@ -66,61 +66,12 @@ extents = Vector3( 2.09756, 1, 1 )
 
 [node name="ParkedCars" type="Spatial"]
 
-[node name="Car1" type="RigidBody" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.331, 6.5 )
-mass = 400.0
-sleeping = true
-
-[node name="MeshInstance" type="MeshInstance" parent="Car1"]
-editor/display_folded = true
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-
-[node name="Wheel1" type="MeshInstance" parent="Car1/MeshInstance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.786439, 0.109768, 1.51113 )
-mesh = ExtResource( 4 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="Wheel3" type="MeshInstance" parent="Car1/MeshInstance"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.854424, 0.109768, 1.50768 )
-mesh = ExtResource( 4 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="Wheel2" type="MeshInstance" parent="Car1/MeshInstance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.786439, 0.109768, -1.25395 )
-mesh = ExtResource( 4 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="Wheel4" type="MeshInstance" parent="Car1/MeshInstance"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.659243, 0.109768, -1.2505 )
-mesh = ExtResource( 4 )
-material/0 = null
-material/1 = null
-material/2 = null
-
-[node name="CollisionShape" type="CollisionShape" parent="Car1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625584, 0 )
-shape = SubResource( 3 )
-
 [node name="Car3" type="RigidBody" parent="."]
-editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.81421, 0.331, 6.5 )
 mass = 400.0
 sleeping = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Car3"]
-editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -161,13 +112,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625584, 0 )
 shape = SubResource( 3 )
 
 [node name="Car2" type="RigidBody" parent="."]
-editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.07221, 0.331, 6.5 )
 mass = 400.0
 sleeping = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Car2"]
-editor/display_folded = true
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
