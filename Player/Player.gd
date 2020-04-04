@@ -11,6 +11,7 @@ var steer_target = 0.0  # where the wheels are supposed to be
 var steer_angle = 0.0 # where are the wheels now
 
 var money = 0
+var money_drop = 20
 var money_per_beacon = 1000
 
 sync var players = {}
@@ -154,7 +155,16 @@ func money_delivered():
 
 
 
-
-
-
-
+func _on_Player_body_entered(body):
+	if(body.has_node("Money")):
+		money += money_drop		
+		body.queue_free()
+	elif money > 0 and not is_in_group("cops"):
+		spawn_money()
+		money -= money_drop
+	manage_money()
+		
+func spawn_money():
+	var money_bag = preload("res://Props/MoneyBag/MoneyBag.tscn").instance()
+	money_bag.translation = Vector3(translation.x, 4, translation.z)
+	get_parent().get_parent().add_child(money_bag)
