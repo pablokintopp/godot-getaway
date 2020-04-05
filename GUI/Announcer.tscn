@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GUI/default.theme" type="Theme" id=1]
+[ext_resource path="res://GUI/frame.tres" type="StyleBox" id=2]
+[ext_resource path="res://GUI/Announcer.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Announcement"
+length = 4.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Announcer" type="CenterContainer" groups=[
+"Announcements",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 447.0
+margin_top = 281.0
+margin_right = 576.0
+margin_bottom = 319.0
+custom_styles/normal = ExtResource( 2 )
+text = "Announcements"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Announcement = SubResource( 1 )
