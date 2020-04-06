@@ -2,10 +2,8 @@ extends Node
 
 func lookup_rotation(tile):
 	var rotations = []
-	match tile: 
-		0:
-			rotations = null
-		1, 3, 5, 7, 9, 11, 13:
+	match tile: 		
+		0, 1, 3, 5, 7, 9, 11, 13:
 			rotations.append(0)
 		2, 3, 6, 7, 10, 11, 14:
 			rotations.append(90)
