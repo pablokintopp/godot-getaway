@@ -14,6 +14,8 @@ var money = 0
 var money_drop = 20
 var money_per_beacon = 1000
 
+var siren = false
+
 sync var players = {}
 var player_data = {"steer":0, "engine":0, "brakes":0, "position":null, "speed":0, "money":0}
 
@@ -38,6 +40,7 @@ func join_team():
 	else:
 		$CopMesh.queue_free()
 #		$Arrow.queue_free()
+		$Siren.queue_free()
 	
 func _physics_process(delta):
 	if is_local_Player():
@@ -170,3 +173,22 @@ func spawn_money():
 	var money_bag = preload("res://Props/MoneyBag/MoneyBag.tscn").instance()
 	money_bag.translation = Vector3(translation.x, 4, translation.z)
 	get_parent().get_parent().add_child(money_bag)
+	
+func _input(event):
+	if event.is_action_pressed("car_sound") and is_local_Player() and is_in_group("cops"):		
+		toggle_siren()
+		
+
+func toggle_siren():
+	siren = !siren
+	if(siren):
+		$Siren/AudioStreamPlayer3D.play()
+		$Siren/SirenMesh/SpotLight.show()
+		$Siren/SirenMesh/SpotLight2.show()
+	else:
+		$Siren/AudioStreamPlayer3D.stop()
+		$Siren/SirenMesh/SpotLight.hide()
+		$Siren/SirenMesh/SpotLight2.hide()
+
+
+
