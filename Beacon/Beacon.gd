@@ -24,6 +24,7 @@ func _on_Beacon_body_entered(body):
 	player = body
 	$Timer.start()
 	show()
+	get_tree().call_group("Announcements", "announce_crime", translation)
 
 
 func _on_Beacon_body_exited(body):

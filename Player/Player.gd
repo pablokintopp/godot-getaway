@@ -37,6 +37,7 @@ func join_team():
 		$RobberMesh.queue_free()
 	else:
 		$CopMesh.queue_free()
+#		$Arrow.queue_free()
 	
 func _physics_process(delta):
 	if is_local_Player():
@@ -150,7 +151,7 @@ remote func display_money():
 
 func money_delivered():
 	var player_name = Saved.save_data["Player_name"]
-	get_tree().call_group("Announcements", "money_stashed",player_name, money)
+#	get_tree().call_group("Announcements", "money_stashed",player_name, money)
 	money = 0;
 	manage_money()
 
